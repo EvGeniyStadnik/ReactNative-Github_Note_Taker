@@ -96,6 +96,9 @@ class Main extends Component {
   };
 
   render() {
+    let showError = (
+      this.state.error ? <Text>{ this.state.error }</Text> : ''
+    );
     return (
       <View style={styles.mainContainer}>
         <Text style={styles.title}>
@@ -115,6 +118,13 @@ class Main extends Component {
             SEARCH
           </Text>
         </TouchableHighlight>
+        <ActivityIndicator
+          animating={this.state.isLoading}
+          color='#111'
+          size='large'
+        >
+        </ActivityIndicator>
+        { showError }
       </View>
     );
   }
