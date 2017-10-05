@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { View,
+import {
+  View,
   Text,
   StyleSheet,
   TextInput,
@@ -97,7 +98,7 @@ class Main extends Component {
 
   render() {
     let showError = (
-      this.state.error ? <Text>{ this.state.error }</Text> : ''
+      this.state.error ? <Text>{ this.state.error }</Text> : <View></View>
     );
     return (
       <View style={styles.mainContainer}>
