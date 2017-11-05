@@ -6,6 +6,7 @@ import {
   StyleSheet,
   Image
 } from 'react-native';
+import Profile from './Profile';
 
 let styles = StyleSheet.create({
   container: {
@@ -44,7 +45,12 @@ class Dashboard extends Component {
   }
 
   goToProfile = () => {
-    console.log('go to profile')
+    console.log('go to profile');
+    this.props.navigator.push({
+      title: 'Badge Component',
+      component: Profile,
+      passProps: {userData: this.props.userData}
+    })
   };
 
   goToRepo = () => {

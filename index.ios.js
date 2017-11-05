@@ -2,6 +2,7 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  * @flow
+ * control + command + z open console, or command + D
  */
 
 import React, { Component } from 'react';
