@@ -8,8 +8,9 @@ import {
 } from 'react-native';
 
 import Badge from './Badge';
+import Separator from './Helpers/Separator';
 
-var styles = StyleSheet.create({
+const styles = StyleSheet.create({
   container: {
     flex: 1
   },
@@ -46,9 +47,12 @@ class Profile extends Component {
         return <View key={index} />
       } else {
         return (
-          <View key={index} style={styles.rowContainer}>
-            <Text style={styles.rowTitle}>{this.showTitle(item)}</Text>
-            <Text style={styles.rowContent}>{userData[item]}</Text>
+          <View key={index}>
+            <View style={styles.rowContainer}>
+              <Text style={styles.rowTitle}>{this.showTitle(item)}</Text>
+              <Text style={styles.rowContent}>{userData[item]}</Text>
+            </View>
+            <Separator />
           </View>
         )
       }
