@@ -10,7 +10,7 @@ import {
 
 import Badge from './Badge';
 import Separator from './Helpers/Separator';
-import WebView from './Helpers/WebView';
+import RepoView from './Helpers/RepoView';
 
 const styles = StyleSheet.create({
   container: {
@@ -42,7 +42,7 @@ class Repositories extends Component{
   openPage = url => {
     this.props.navigator.push({
       title: 'Web View',
-      component: WebView,
+      component: RepoView,
       passProps: { url }
     })
   };

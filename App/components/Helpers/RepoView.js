@@ -15,19 +15,19 @@ const styles = StyleSheet.create({
   }
 });
 
-class Web extends Component {
+class RepoView extends Component {
   render() {
     const { url } = this.props;
     return (
       <View style={styles.container}>
-        <WebView url={url}/>
+        <WebView source={{ url }}/>
       </View>
     );
   }
 }
 
-Web.propTypes = {
+RepoView.propTypes = {
   url: PropTypes.string.isRequired
 };
 
-export default Web;
+export default RepoView;
