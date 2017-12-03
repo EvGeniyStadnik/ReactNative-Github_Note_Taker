@@ -7,6 +7,9 @@ import {
   Image
 } from 'react-native';
 import Profile from './Profile';
+import Repositories from "./Repositories";
+
+import api from '../Utils/api';
 
 let styles = StyleSheet.create({
   container: {
@@ -49,12 +52,20 @@ class Dashboard extends Component {
     this.props.navigator.push({
       title: 'Badge Component',
       component: Profile,
-      passProps: {userData: this.props.userData}
+      passProps: { userData: this.props.userData }
     })
   };
 
   goToRepo = () => {
-    console.log('go to repo')
+    const data =  api.getRepos(this.props.userData.login);
+    data.then(repos =>  {
+      this.props.navigator.push({
+        title: 'Repositories',
+        component: Repositories,
+        passProps: { userData: this.props.userData, repos }
+      })
+    });
+
   };
 
   goToNotes = () => {
