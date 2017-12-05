@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import Profile from './Profile';
 import Repositories from "./Repositories";
+import Notes from "./Notes";
 
 import api from '../Utils/api';
 
@@ -69,7 +70,18 @@ class Dashboard extends Component {
   };
 
   goToNotes = () => {
-    console.log('go to notes')
+    api.getNotes(this.props.userData.login)
+      .then(res => {
+        res = res || {};
+        this.props.navigator.push({
+          component: Notes,
+          title: 'Notes',
+          passProps: {
+            notes: res,
+            userData: this.props.userData,
+          }
+        })
+      });
   };
 
   render() {

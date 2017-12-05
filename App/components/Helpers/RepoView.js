@@ -20,7 +20,7 @@ class RepoView extends Component {
     const { url } = this.props;
     return (
       <View style={styles.container}>
-        <WebView source={{ url }}/>
+        <WebView source={{ uri: url }}/>
       </View>
     );
   }
